@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brass-glow: 0 0 20px rgba(217, 119, 6, 0.35);
+    --amber-candle: 0 0 35px rgba(245, 158, 11, 0.3);
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #120a06;
+    color: #f7ede2;
+  }
+}
+
+/* Stylized fantasy font classes */
+.font-character-name {
+  font-family: 'MedievalSharp', 'Cinzel Decorative', cursive;
+  letter-spacing: 0.04em;
+}
+
+.font-cinzel-decorative {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+}
+
+.font-fantasy {
+  font-family: 'Cinzel', serif;
+}
+
+.font-medieval {
+  font-family: 'MedievalSharp', cursive;
+}
+
+.font-parchment-lore {
+  font-family: 'Almendra', Georgia, serif;
+}
+
+/* Ancient Alchemist's Workbench Textures */
+
+/* Aged Dark Wood Grain Workbench Surface */
+.bg-alchemist-workbench {
+  background-color: #120a06;
+  background-image: 
+    /* Subtle amber candlelight reflections */
+    radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 15% 30%, rgba(217, 119, 6, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(180, 83, 9, 0.15) 0%, transparent 45%),
+    /* Wood grain planks & knots simulation */
+    repeating-linear-gradient(
+      90deg,
+      rgba(25, 14, 8, 0.95) 0px,
+      rgba(18, 10, 6, 0.98) 120px,
+      rgba(10, 6, 3, 1) 124px,
+      rgba(28, 16, 9, 0.95) 126px,
+      rgba(18, 10, 6, 0.98) 260px,
+      rgba(8, 4, 2, 1) 264px
+    ),
+    /* Deep wood texture grain lines */
+    repeating-linear-gradient(
+      0deg,
+      rgba(245, 158, 11, 0.015) 0px,
+      rgba(0, 0, 0, 0.2) 2px,
+      transparent 3px,
+      transparent 8px
+    );
+  background-attachment: fixed;
+}
+
+/* Aged Parchment Vellum Card Texture */
+.bg-parchment-vellum {
+  background-color: #1c130c;
+  background-image: 
+    radial-gradient(ellipse at 50% 50%, rgba(55, 35, 18, 0.85) 0%, rgba(26, 17, 11, 0.98) 100%),
+    radial-gradient(circle at 0% 0%, rgba(217, 119, 6, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(120, 53, 15, 0.2) 0%, transparent 60%);
+  box-shadow: inset 0 0 40px rgba(10, 6, 3, 0.8), 0 20px 45px rgba(0, 0, 0, 0.7);
+}
+
+/* Worn Dark Slate Stone Plate */
+.bg-alchemist-slate {
+  background-color: #15110d;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(40, 32, 26, 0.6) 0%, rgba(18, 14, 10, 0.95) 100%),
+    repeating-radial-gradient(circle at 20% 20%, transparent 0, rgba(0, 0, 0, 0.1) 8px, transparent 16px);
+}
+
+/* Brass and Amber Accents */
+.border-brass {
+  border-color: #b45309;
+}
+
+.border-brass-ornate {
+  border: 2px solid #b45309;
+  box-shadow: 0 0 0 1px #78350f, inset 0 0 0 1px #d97706, 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.brass-plate {
+  background: linear-gradient(135deg, #78350f 0%, #b45309 35%, #d97706 50%, #92400e 75%, #451a03 100%);
+  color: #fef3c7;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+  border: 1px solid #f59e0b;
+}
+
+.brass-bracket {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #d97706;
+  pointer-events: none;
+}
+
+/* Amber Glowing Resins */
+.amber-glow {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+}
+
+.brass-rivet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fde68a, #d97706, #78350f);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Ancient Alchemist Seal */
+.wax-seal {
+  background: radial-gradient(circle at 35% 30%, #b91c1c 0%, #991b1b 50%, #7f1d1d 80%, #450a0a 100%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Candle flicker animation */
+@keyframes candleFlicker {
+  0%, 100% {
+    opacity: 0.92;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+  75% {
+    opacity: 0.88;
+    transform: scale(0.99);
+  }
+}
+
+.animate-candle-flicker {
+  animation: candleFlicker 3s ease-in-out infinite;
+}
+
+@keyframes runeSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rune-spin {
+  animation: runeSpin 16s linear infinite;
+}
